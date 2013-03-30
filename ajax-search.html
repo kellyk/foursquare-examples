@@ -1,0 +1,36 @@
+<!-- 
+	File: ajax-search.html
+ 	Description: 
+
+ 		This page uses JavaScript and PHP to communicate with FourSquare.
+ 		Page gets a list of venues (with pictures) based on venue name. (Default search is Ann Arbor, MI 48103).
+		
+		As user types, jQuery is used to grab the input (on keyUp event) and create an Ajax request. 
+		
+		This request uses PHP files to communicate with FourSquare. 
+		(jQuery could have done this directly, but FourSquare credentials would be exposed).
+		
+		PHP file prints returned JSON object, which javascript reads back and uses to create
+		an unsorted list of venues, which it inserts into the DOM.
+-->
+<html>
+	<head>
+		<title>FourSquare API Test</title>
+		<style>
+			ul { margin: 0; padding: 0; }
+			#update ul { width: 350px; }
+			#update ul li { list-style: none; width: 100%; min-height: 60px; clear: both; padding: 10px; }
+			#update ul li img { float: left; padding: 0px 10px 0 0; }
+			#update ul li:hover { background: #CFF3FA;}
+			#update a { color: teal; text-decoration: none; }
+		</style>
+	</head>
+	<body>
+		<h1>Get Venues From FourSquare!</h1>
+		
+		<input type="text" id="search">
+		<div id="update"></div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+		<script src="./js/script.js"></script>
+	</body>
+</html>

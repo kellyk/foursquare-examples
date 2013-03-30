@@ -1,5 +1,11 @@
 <?php
-	require_once('constants.php');
+	// File: photos.php
+	// Description: This page allows users to search for specific foursquare 
+	// 		venues (by ID), and displays the pictures on the page.
+	// 		The only real FourSquare specific concept to notice is the structure of the
+	//		URL request, which returns a JSON object with result of search
+
+	require_once('./includes/constants.php');
 
 	if(isset($_GET['venue']))
 	{
@@ -32,7 +38,7 @@
 			<input type="text" name="venue" />
 			<input type="submit">
 		</form>
-
+		
 		<?php
 			if(!empty($data)) {
 				//Note that the FourSquare API returns an image suffix and prefix. 
@@ -42,5 +48,6 @@
 				}
 			}
 		?>
+		
 	</body>
 </html>

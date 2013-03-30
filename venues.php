@@ -1,5 +1,10 @@
 <?php
-	require_once('constants.php');
+	// File: venues.php
+	// Description: This page allows users to search for foursquare 
+	// 		venues by city/state or zip. The returned object is used to create
+	// 		an unsorted list of venues (number specified in fetched URL).
+
+	require_once('./includes/constants.php');
 
 	if(isset($_GET['city']) && isset($_GET['store']))
 	{
